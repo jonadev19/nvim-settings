@@ -1,0 +1,30 @@
+# --- Neovim / Plugins ---
+# No subas los plugins instalados (Lazy.nvim los descargará)
+/lazy-lock.json
+
+# --- Archivos Temporales de Edición ---
+*.swp
+*.swo
+*~
+.netrwhist
+undo/
+backups/
+sessions/
+
+# --- Específicos de tu configuración ---
+# Ignorar logs de nvim-tree si los habilitas
+/nvim-tree.log
+
+# Ignorar base de datos local de vim-dadbod si la guardas aquí
+.dbui_queries/
+
+# --- Lenguajes / Herramientas ---
+# Si tienes entornos de prueba locales para Go o TS
+node_modules/
+/vendor/
+.env
+.env.local
+
+# --- SO ---
+.DS_Store
+Thumbs.db
