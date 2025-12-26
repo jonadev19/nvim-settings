@@ -1,12 +1,30 @@
 return {
 	{
-		"sainnhe/sonokai",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		priority = 1000,
-		config = function()
-			vim.g.sonokai_transparent_background = "1"
-			vim.g.sonokai_enable_italic = "1"
-			vim.g.sonokai_style = "andromeda"
-			vim.cmd.colorscheme("sonokai")
+		opts = {
+			transparent_background = true, -- Mantenemos tu preferencia de fondo transparente
+			flavour = "mocha", -- Puedes elegir entre: latte, frappe, macchiato, mocha
+			integrations = {
+				nvimtree = true,
+				telescope = {
+					enabled = true,
+				},
+				notify = true,
+				mini = {
+					enabled = true,
+					indentscope_color = "",
+				},
+				-- Otras integraciones basadas en tus archivos:
+				neotest = true,
+				noice = true,
+				bufferline = true,
+			},
+		},
+		config = function(_, opts)
+			require("catppuccin").setup(opts)
+			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 }
